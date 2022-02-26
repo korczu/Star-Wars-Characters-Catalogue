@@ -8,7 +8,8 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -44,18 +45,37 @@ body {
 div.list__container {
     grid-row: 1/3;
     overflow-y: scroll;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 ul.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     justify-self: center;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     list-style: none;
     padding: 0;
     margin-bottom: 50px;
@@ -75,6 +95,7 @@ ul.list {
     line-height: 5rem;
     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.2) ;
     cursor: pointer;
+    -webkit-transition: scale 0.2s, line-height 0.5s;
     transition: scale 0.2s, line-height 0.5s;
 }
 
@@ -98,13 +119,15 @@ ul.list {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
-    box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.9);
     text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.5) ;
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 
 }
 .button__expand:hover{
+    -webkit-transition: all 0.2s;
     transition: all 0.2s;
     scale:1.2;
 }
@@ -118,7 +141,8 @@ ul.list {
 }
 ::-webkit-scrollbar-track {
     background-color: rgba(0,0,0,0.2);
-    box-shadow: 0 0px 5px 2px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0px 5px 2px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0px 5px 2px rgba(255, 255, 255, 0.5);
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.7);
@@ -128,10 +152,19 @@ ul.list {
 .filters{
     grid-column: 1/2;
     grid-row: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: rgba(0,0,0,0.2);
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
@@ -143,22 +176,28 @@ ul.list {
 .filter {
     font-size: 0.8rem;
     display: grid;
-    align-items: end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
     grid-template-columns: 1em 150px;
     gap: 0.3em;
     padding: 10px;
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
 }
 
 .filters input[type="radio"]{
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     background-color: transparent;
     margin: 0;
     font: inherit;
     width: 0.7em;
     height: 0.7em;
     border: solid 1px white;
-    transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+            transform: translateY(-0.25em);
     border-radius: 50%;
     display: grid;
     place-content: center;
@@ -169,17 +208,24 @@ ul.list {
     width: 0.7em;
     height: 0.7em;
     border-radius: 50%;
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: 120ms -webkit-transform ease-in-out;
+    transition: 120ms -webkit-transform ease-in-out;
     transition: 120ms transform ease-in-out;
+    transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
     background-color: rgba(255, 255, 255, 1);
-    box-shadow:  0.1px 0.1px 5px 2px white;
+    -webkit-box-shadow:  0.1px 0.1px 5px 2px white;
+            box-shadow:  0.1px 0.1px 5px 2px white;
 }
 .filters input[type="radio"]:checked::before {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
 }
 
 .filters-section > *:hover {
     scale:1.2;
+    -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 /* details */
@@ -187,8 +233,13 @@ ul.list {
 .details__section {
     grid-column: 2/-1 ;
     grid-row: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
 }
 
@@ -208,14 +259,20 @@ ul.list {
 }
 
 .details__content{
-    flex:1;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto 1fr;
     grid-auto-flow: column;
-    column-gap: 10px;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
     background-color: rgba(0,0,0,0.2);
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .details__content > span{
     padding-top: 20px;
@@ -230,9 +287,14 @@ ul.list {
 .content--empty  {
     grid-column: 1/-1;
     grid-row: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin: 0;
     font-size: 3em;
     font-weight: 100;
@@ -244,7 +306,8 @@ ul.list {
     padding:0;
     padding-left: 20px;
     font-size: 2em;
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     height: 100%;
     border-left: 1px solid rgba(0,0,0,0.5);
 }
@@ -261,10 +324,16 @@ ul.details__list {
 footer {
     grid-column: 2/3;
     grid-row: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     background-color: rgba(0,0,0,0.2);
     border-top: 1px solid rgba(0,0,0,0.5);
 
@@ -312,25 +381,48 @@ footer a {
 }
 @media screen and (max-width:900px)  {
     .details__content{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        flex:1;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-flex:1;
+            -ms-flex:1;
+                flex:1;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding: 0;
     }
     .details__list{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        flex:1;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-flex:1;
+            -ms-flex:1;
+                flex:1;
         max-width: none;
-        align-items: center;
-        justify-content: center;
-        align-self: stretch;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
         border-bottom: 1px solid rgba(0,0,0,0.5);
     }
     ol.details__list > *{
-        flex:1;
+        -webkit-box-flex:1;
+            -ms-flex:1;
+                flex:1;
         padding-left: 10px;
     }
     
