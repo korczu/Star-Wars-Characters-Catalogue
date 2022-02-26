@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="build/style.css">
+	<title>Star Wars Characters List</title>
+</head>
+<body>
+<div class="wrapper">
+	<!-- List -->
+	<section class="list__section">
+		<div class="filters">
+			<div class="filter filter--first">
+				<input type="radio" name="filter" id="byname" value="show-list-by-character-name" checked/>
+				<label for="byname" >SHOW BY NAME</label>
+			</div>
+			<div class="filter filter--second"> 
+				<input type="radio" name="filter"id="byfilm" value="show-list-by-film-title"/>
+				<label for="byfilm">SHOW BY FILM</label>
+			</div>
+		</div>
+		<div class="list__container">
+			<ul class="list">
+			</ul>
+			<button class="button__expand">SHOW MORE ITEMS ON LIST</button>
+		</div>
+	</section>
+
+	<!-- Details -->
+	<section class="details__section">
+		<h1 class="details__header">The Star Wars Catalogue </h1>
+		<div class="details__content">
+			<h2 class="content--empty">Choose character from the list...</h2>
+		</div>
+	</section>
+	<footer>
+		<a href='https://www.freepik.com/photos/copy-space'>Copy space photo created by rawpixel.com - www.freepik.com</a>
+	</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+ 
